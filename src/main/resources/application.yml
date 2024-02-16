@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: consumer
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.web.client.RestTemplate: trace
+    org.springframework.web.reactive.function.client.ExchangeFunctions: trace
+
+demo-api:
+  url: http://localhost:8080 # URL of the DemoAPI
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+
+logbook:
+  exclude:
+    - /api/upload
+    - /api/download
